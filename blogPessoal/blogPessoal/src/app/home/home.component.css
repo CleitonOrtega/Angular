@@ -1,0 +1,14 @@
+.parallax{
+    background-image: url('https://asrconsultoria.com.br/wp-content/uploads/2017/08/IMG_Linguagem-Prog.jpg');
+
+    min-height: 500px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fonte-letras{
+    font-family: Times New Roman;
+}

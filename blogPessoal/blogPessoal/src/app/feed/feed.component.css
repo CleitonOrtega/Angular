@@ -1,0 +1,12 @@
+.fonte-letras{
+    font-family: Times New Roman;
+}
+
+.texto{
+    letter-spacing: .4rem;
+    font-size: 24pt;
+}
+
+.alinhamento{
+    align-items: end;
+}

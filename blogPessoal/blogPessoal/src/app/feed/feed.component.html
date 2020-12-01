@@ -1,0 +1,108 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <app-perfil-lateral></app-perfil-lateral>
+        </div>
+
+        <div class="col-md-8 mt-5 mb-5">
+            <h3 class="text-center text-primary mb-4 fonte-letras texto"> Como foi sua experiencia? </h3>
+
+            <form class="mb-5">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Titulo:</label>
+                    <input type="text" class="form-control" id="titulo" placeholder="Digite aqui o seu titulo">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Sua experiencia:</label>
+                    <textarea class="form-control" id="experiencia" rows="3"
+                        placeholder="Digite aqui a sua experiencia"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="exampleFormControlSelect1">Escolha um tema ou Cadastre um novo</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Celulares Samsung</option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-end align-items-end">
+                            <button type="button" class="btn btn-outline-primary w-50 h-50">Publicar</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </form>
+
+            
+            <hr>
+
+            <nav class="d-flex justify-content-center">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active text-secondary font-weight-bold"
+                    id="nav-home-tab" data-toggle="tab" href="#minhas-postagens"
+                    role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
+
+                    <a class="nav-item nav-link text-secondary font-weight-bold"
+                    id="nav-profile-tab" data-toggle="tab" href="#postagens-temas"
+                    role="tab" aria-controls="nav-profile" aria-selected="false">Postagens por Tema</a>
+                </div>
+            </nav>
+
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel"
+                aria-labelledby="nav-postagens-tab">
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-10 pr-0">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem"
+                            aria-label="Pesquisar">
+                        </div>
+
+                        <div class="col-md-2 pl-0">
+                            <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="tab-pane fade show active" id="postagens-temas" role="tabpanel"
+                aria-labelledby="nav-postagens-tab">
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-10 pr-0">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar postagem por tema"
+                            aria-label="Pesquisar">
+                        </div>
+
+                        <div class="col-md-2 pl-0">
+                            <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+        
+
+    </div>
+
+</div>

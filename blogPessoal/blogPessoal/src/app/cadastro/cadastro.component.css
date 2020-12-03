@@ -1,0 +1,10 @@
+.bg-perso{
+    
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(52,58,66,1) 74%);
+
+}
+
+.fonte-letras{
+    font-family: Times New Roman;
+}

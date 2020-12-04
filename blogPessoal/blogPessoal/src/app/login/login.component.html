@@ -1,6 +1,5 @@
-<div class="w-100 h-100">
-<form class="bg-perso">
-    <div class="row p-5">
+<div class="w-100 h-100 bg-perso">
+    <div class="row p-5 w-100">
         <div class="col-md-12 d-flex justify-content-center">
 
             <h1 class="text-uppercase font-italic "> Login </h1>
@@ -9,20 +8,19 @@
         <div class="col-md-12 d-flex justify-content-center ">
     <div class="form-group w-50 ">
       <label for="exampleInputEmail1" class="fonte-letras">Usuario</label>
-      <input type="email" class="form-control" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input type="email" class="form-control" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]='userLogin.usuario'>
       <small id="emailHelp" class="form-text text-dark ">Nós nunca enviaremos seu email para ninguem.</small>
     </div>
 </div>
 <div class="col-md-12 d-flex justify-content-center">
     <div class="form-group w-50">
       <label for="exampleInputPassword1" class="fonte-letras">Senha</label>
-      <input type="password" class="form-control" placeholder="Senha" id="exampleInputPassword1">
+      <input type="password" class="form-control" placeholder="Senha" id="exampleInputPassword1" [(ngModel)]='userLogin.senha'>
     </div>
 </div>
 <div class="col-md-12 d-flex justify-content-center">
     
-    <button type="submit" class="btn btn-outline-dark w-25 text-uppercase font-italic">Entrar</button>
+    <button type="submit" class="btn btn-outline-dark w-25 text-uppercase font-italic" (click)='entrar()'>Entrar</button>
 </div>
 </div>
-  </form>
 </div>

@@ -12,27 +12,29 @@
             <form class="mb-5">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Titulo:</label>
-                    <input type="text" class="form-control" id="titulo" placeholder="Digite aqui o seu titulo">
+                    <input type="text" class="form-control" id="titulo" placeholder="Digite aqui o seu titulo" [(ngModel)]='postagem.titulo' [ngModelOptions]="{standalone: true}">
                 </div>
 
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Sua experiencia:</label>
                     <textarea class="form-control" id="experiencia" rows="3"
-                        placeholder="Digite aqui a sua experiencia"></textarea>
+                        placeholder="Digite aqui a sua experiencia" name="texto" [(ngModel)]='postagem.texto'></textarea>
                 </div>
 
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-8">
-                            <label for="exampleFormControlSelect1">Escolha um tema ou <a routerLink=""> Cadastre um novo </a> </label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Celulares Samsung</option>
+                            <label for="exampleFormControlSelect1">Escolha um tema ou <a routerLink='/cadastroTema'> Cadastre um novo </a> </label>
+                            <select class="form-control" id="tema" [(ngModel)]='idTema' [ngModelOptions]="{standalone: true}" (change)='findByIdTema()'>
+                                <option *ngFor='let item of listaTemas' value={{item.id}}>
+                                    {{item.descricao}}
+                                </option>
 
                             </select>
                         </div>
                         <div class="col-md-4 d-flex justify-content-end align-items-end">
-                            <button type="button" class="btn btn-outline-primary w-50 h-50">Publicar</button>
+                            <button type="button" class="btn btn-outline-primary w-50 h-50" (click)='publicar()'>Publicar</button>
                         </div>
 
                     </div>
@@ -69,13 +71,46 @@
                         <div class="col-md-2 pl-0">
                             <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
                         </div>
-
                     </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card mt-5" *ngFor='let item of listaPostagens | orderBy: key : reverse' >
+                                    <div class="card-header">
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-8">
+                                                <h5 class="card-title">{{item.titulo}}</h5>
+                                                <small>Tema: {{item.tema.descricao}}</small>
+                                            </div>
+                                            <div class="col-md-4 d-flex justify-content-end">
+
+                                                <button class="mr-3 btn btn-outline-info"> 
+                                                    Editar
+                                                </button>
+
+                                                <button class="btn btn-outline-danger ml-3">
+                                                    Apagar
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <p class="card-text" aria-describedby="texto"> {{item.texto}} </p>
+                                        <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                                            Postado em {{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
 
 
                 </div>
 
-                <div class="tab-pane fade show active" id="postagens-temas" role="tabpanel"
+                <div class="tab-pane fade" id="postagens-temas" role="tabpanel"
                 aria-labelledby="nav-postagens-tab">
                     <div class="row mt-3 mb-3">
                         <div class="col-md-10 pr-0">
